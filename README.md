@@ -1,2 +1,2 @@
 # tinyNode
-TIny node static web server
+Tiny node static web server
