@@ -26,6 +26,7 @@
   "homepage": "https://github.com/dongCode/tinyNode#readme",
   "dependencies": {},
   "devDependencies": {
+    "chalk": "^2.4.1",
     "pre-commit": "^1.2.2"
   }
 }
