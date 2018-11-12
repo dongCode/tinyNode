@@ -24,7 +24,9 @@
     "url": "https://github.com/dongCode/tinyNode/issues"
   },
   "homepage": "https://github.com/dongCode/tinyNode#readme",
-  "dependencies": {},
+  "dependencies": {
+    "handlebars": "^4.0.12"
+  },
   "devDependencies": {
     "chalk": "^2.4.1",
     "pre-commit": "^1.2.2"

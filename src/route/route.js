@@ -1,8 +1,16 @@
 
 const fs = require('fs');
 const { promisify } = require('util');
+const path = require('path');
+const handlebars = require('handlebars');
+//const config = require('../config/defaultConfig');
+
 const stat = promisify(fs.stat);
 const readdir = promisify(fs.readdir);
+
+const tplPath = path.join(__dirname, '../views/dir.tpl');
+const source = fs.readFileSync(tplPath);
+const view = handlebars.compile(source.toString());
 
 module.exports = async function (req, res, filePath) {
   try {
@@ -14,7 +22,12 @@ module.exports = async function (req, res, filePath) {
     } else if (stats.isDirectory()) {
       const files =  await readdir(filePath);
       res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.end(files.join(','));
+      const data = {
+        title: filePath,
+        dir: filePath,
+        files
+      };
+      res.end(view(data));
     }
   } catch (err) {
     console.log(err);
