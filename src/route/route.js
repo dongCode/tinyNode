@@ -3,6 +3,7 @@ const fs = require('fs');
 const { promisify } = require('util');
 const path = require('path');
 const handlebars = require('handlebars');
+const config = require('../config/defaultConfig');
 //const config = require('../config/defaultConfig');
 
 const stat = promisify(fs.stat);
@@ -21,10 +22,10 @@ module.exports = async function (req, res, filePath) {
       return;
     } else if (stats.isDirectory()) {
       const files =  await readdir(filePath);
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.writeHead(200, { 'Content-Type': 'text/html' });
       const data = {
-        title: filePath,
-        dir: filePath,
+        title: path.basename(filePath),
+        dir: path.relative(config.root, filePath),
         files
       };
       res.end(view(data));
