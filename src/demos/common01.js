@@ -1,3 +1,4 @@
+console.log('once');
 const testVar = 'test';
 function test() {
   console.log(testVar);
