@@ -17,11 +17,8 @@ module.exports = {
             "error",
             "single"
         ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "no-console": "off",
+        "semi": 0,
+        "no-console": 0,
         "no-debugger": 2
     }
 };
