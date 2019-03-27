@@ -1,0 +1,31 @@
+{
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    "html",
+    "vue"
+  ],
+  // #每次保存的时候自动格式化
+  "editor.formatOnSave": true,
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      // Prettier option here
+      "tabWidth": 2,
+      "semi": false,
+      "singleQuote": true
+    }
+  },
+  "files.autoSave": "afterDelay",
+  "workbench.colorTheme": "Visual Studio Dark",
+  "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true
+  },
+  "window.zoomLevel": 0,
+  "editor.tabSize": 2
+}
